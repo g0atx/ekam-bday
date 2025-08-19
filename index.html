@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, Ekamdeep Kaur! 🎉</title>
+  <meta name="description" content="A birthday webpage made with love by Narendra for his best friend, Ekamdeep Kaur." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1225;
+      --bg-2: #171a35;
+      --text: #f5f7ff;
+      --muted: #c6c9f3;
+      --primary: #8b5cf6; /* violet */
+      --secondary: #22d3ee; /* cyan */
+      --accent: #f59e0b; /* amber */
+      --success: #22c55e; /* green */
+      --danger: #ef4444; /* red */
+      --card: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.08);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text);
+      background: radial-gradient(1000px 600px at 20% -10%, #201d3f, transparent 60%),
+                  radial-gradient(800px 600px at 120% 10%, #132046, transparent 60%),
+                  radial-gradient(600px 600px at 50% 120%, #142237, transparent 60%),
+                  linear-gradient(180deg, #0b0e21, #0f1225);
+      overflow-x:hidden;
+    }
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    .nav{
+      position:sticky; top:0; z-index:40; backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .navbar{display:flex; align-items:center; justify-content:space-between; padding:12px 24px}
+    .brand{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:0.3px}
+    .brand .cake{font-size:26px}
+    .nav .actions{display:flex; gap:10px}
+    .btn{
+      appearance:none; border:0; padding:10px 14px; border-radius:14px; color:var(--text); cursor:pointer; font-weight:600; 
+      background: linear-gradient(135deg, var(--primary), var(--secondary)); box-shadow: var(--shadow); transition: transform .08s ease, box-shadow .2s ease, filter .2s;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.07); }
+    .btn.ghost{ background: var(--glass); box-shadow:none; border:1px solid rgba(255,255,255,0.1); }
+
+    .hero{ position:relative; padding:72px 24px 36px; text-align:center; overflow:hidden; }
+    .hero h1{ font-family: Pacifico, cursive; font-weight:400; font-size: clamp(36px, 6vw, 70px); margin: 0 0 10px; }
+    .hero .subtitle{ font-size: clamp(16px, 2.5vw, 22px); color: var(--muted); margin-bottom: 22px; }
+
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom: 20px; }
+    .chip{ padding:8px 12px; border-radius:999px; background: linear-gradient(135deg, rgba(139,92,246,0.35), rgba(34,211,238,0.35)); border:1px solid rgba(255,255,255,0.15); font-size:14px }
+
+    .cards{ display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 28px; }
+    .card{
+      background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 22px; padding: 18px; box-shadow: var(--shadow);
+    }
+    .card h3{ margin:6px 0 10px; font-size:20px }
+    .card p{ margin:6px 0; color:var(--muted); line-height:1.55 }
+    .pill{ font-size:12px; padding:6px 10px; border-radius:999px; background: rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.25); display:inline-block; }
+
+    .center-actions{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px }
+
+    .section{ padding:36px 24px }
+    .section h2{ font-size: clamp(24px, 3.5vw, 34px); margin:0 0 12px; }
+    .lead{ color:var(--muted) }
+
+    .wish{ position:relative; background: linear-gradient(145deg, rgba(139,92,246,0.15), rgba(34,211,238,0.12)); border:1px solid rgba(255,255,255,0.12); border-radius:24px; padding:22px; box-shadow: var(--shadow) }
+    .wish p{ margin:0; line-height:1.7 }
+
+    .accordion{ display:grid; gap:12px; margin: 16px 0 }
+    details{ background: var(--card); border-radius:16px; padding: 14px 16px; border:1px solid rgba(255,255,255,0.08); }
+    details[open]{ background: rgba(34,211,238,0.08);} 
+    summary{ cursor:pointer; font-weight:700; }
+    summary::-webkit-details-marker{ display:none }
+
+    .gallery{ display:grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap:10px }
+    .polaroid{ position:relative; background:#fff; color:#222; border-radius:12px; padding:8px 8px 18px; transform: rotate(var(--r, -1.5deg)); box-shadow: 0 10px 20px rgba(0,0,0,0.35) }
+    .polaroid img{ width:100%; height:180px; object-fit:cover; border-radius:8px }
+    .polaroid .cap{ font-size:13px; text-align:center; margin-top:8px }
+
+    .toast{ position: fixed; left:50%; transform: translateX(-50%); bottom:20px; background: rgba(0,0,0,0.7); color:#fff; padding:10px 14px; border-radius: 999px; opacity:0; pointer-events:none; transition: opacity .2s, transform .2s; z-index:60 }
+    .toast.show{ opacity:1; transform: translate(-50%, -4px) }
+
+    .footer{ text-align:center; color:var(--muted); font-size:13px; padding: 20px 0 40px }
+
+    /* Floating balloons */
+    .balloon{ position: fixed; bottom: -120px; width: 40px; height: 50px; border-radius: 50% 50% 48% 48%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(255,255,255,0) 30%), var(--clr, #ff7ab6); box-shadow: inset -5px -10px 20px rgba(0,0,0,0.2); z-index:3; animation: rise var(--dur, 9s) linear forwards; }
+    .balloon::after{ content:""; position:absolute; top:48px; left:50%; width:2px; height:80px; background:rgba(255,255,255,0.3) }
+    @keyframes rise{ to{ transform: translateY(-110vh) translateX(var(--x, 0)); opacity:0.9 } }
+
+    /* Typewriter caret */
+    .type{ border-right: 2px solid rgba(255,255,255,0.7); white-space: nowrap; overflow: hidden }
+
+    /* Theme toggle */
+    .light{ --bg:#f7f7ff; --bg-2:#fff; --text:#0e1220; --muted:#4b5563; --card: rgba(0,0,0,0.04); --glass: rgba(0,0,0,0.06); }
+
+    /* Canvas backdrop (confetti & sparkles) */
+    #fxCanvas{ position: fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:2 }
+  </style>
+</head>
+<body>
+  <canvas id="fxCanvas"></canvas>
+  <nav class="nav">
+    <div class="navbar container">
+      <div class="brand"><span class="cake">🎂</span> <span>For <strong>Ekamdeep Kaur</strong></span></div>
+      <div class="actions">
+        <button id="themeBtn" class="btn ghost" aria-label="Toggle theme">🌗 Theme</button>
+        <button id="musicBtn" class="btn ghost" aria-label="Play music">▶️ Music</button>
+        <button id="shareBtn" class="btn" aria-label="Share">🔗 Share</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero container">
+    <h1>Happy Birthday, <span style="background:linear-gradient(90deg,var(--secondary),var(--primary)); -webkit-background-clip:text; background-clip:text; color:transparent">Ekamdeep Kaur</span>! ✨</h1>
+    <div id="typewriter" class="subtitle type">Wishing you a day as brilliant as your smile and as kind as your heart. 💜</div>
+
+    <div class="chips">
+      <div class="chip">22 August • Birthday Girl 🎉</div>
+      <div class="chip">Besties Forever 🤝</div>
+      <div class="chip">Made by Narendra with 💖</div>
+    </div>
+
+    <div class="center-actions">
+      <button id="confettiBtn" class="btn">🎊 Blast Confetti</button>
+      <button id="balloonBtn" class="btn">🎈 Release Balloons</button>
+      <button id="surpriseBtn" class="btn">🎁 Open a Surprise</button>
+      <button id="complimentBtn" class="btn ghost">💬 Random Compliment</button>
+    </div>
+
+    <div id="countdown" style="margin-top:18px; color:var(--muted); font-weight:600"></div>
+
+    <div class="cards">
+      <div class="card">
+        <span class="pill">💌 Birthday Wish</span>
+        <h3>To my favourite classmate & best friend</h3>
+        <p>
+          Dear <strong>Ekamdeep</strong>, today is all about celebrating <em>you</em> — your kindness, your hustle, and the joy you bring to everyone around you. I’m so grateful for our bond, the random laughs, the deep talks, and the way you’ve always had my back. May this year bring you new achievements, calm mornings, and endless reasons to smile.
+        </p>
+      </div>
+      <div class="card">
+        <span class="pill">🌟 A Long Paragraph</span>
+        <h3>Because you deserve all the words</h3>
+        <p>
+          Some people make days brighter just by being in them — and you’re one of those rare people, Ekam. I admire the way you stay genuine, help others without expecting anything back, and chase your goals with quiet confidence. You’ve turned ordinary moments into memories I’ll keep forever. Keep shining, keep laughing, and keep being unapologetically <em>you</em>.
+        </p>
+      </div>
+      <div class="card">
+        <span class="pill">🧁 Sweet Note</span>
+        <h3>Little things, big smiles</h3>
+        <p>
+          May your playlist stay full of bangers, your coffee never run out, and your deadlines stay scared of you. Here’s to more inside jokes, top-tier selfies, and winning at life — one day at a time.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section container">
+    <h2>Memories & Moments 📸</h2>
+    <p class="lead">A tiny gallery of vibes (add your own photos later!).</p>
+    <div class="gallery">
+      <div class="polaroid" style="--r:-3deg">
+        <img alt="Balloons" src="data:image/svg+xml;utf8,\
+          %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%238b5cf6'/%3E%3Cstop stop-color='%2322d3ee' offset='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='%2311172a'/%3E%3Ccircle cx='100' cy='160' r='60' fill='url(%23g)'/%3E%3Ccircle cx='200' cy='130' r='50' fill='%23f59e0b'/%3E%3Ccircle cx='280' cy='170' r='65' fill='%2322c55e'/%3E%3C/svg%3E"/>
+        <div class="cap">Party prep vibes 🎈</div>
+      </div>
+      <div class="polaroid" style="--r:2deg">
+        <img alt="Cake" src="data:image/svg+xml;utf8,\
+          %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='100%25' height='100%25' fill='%2311172a'/%3E%3Crect x='80' y='180' width='240' height='60' rx='10' fill='%23f59e0b'/%3E%3Crect x='100' y='150' width='200' height='40' rx='10' fill='%238b5cf6'/%3E%3Crect x='120' y='120' width='160' height='30' rx='10' fill='%2322d3ee'/%3E%3Cpath d='M200 120 v-40' stroke='%23fff' stroke-width='6'/%3E%3Ccircle cx='200' cy='75' r='10' fill='%23ef4444'/%3E%3C/svg%3E"/>
+        <div class="cap">Make a wish 🎂</div>
+      </div>
+      <div class="polaroid" style="--r:-1deg">
+        <img alt="Confetti" src="data:image/svg+xml;utf8,\
+          %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='100%25' height='100%25' fill='%2311172a'/%3E%3Cg%3E%3Crect x='40' y='40' width='10' height='10' fill='%238b5cf6'/%3E%3Crect x='200' y='60' width='10' height='10' fill='%2322d3ee'/%3E%3Crect x='340' y='120' width='10' height='10' fill='%23f59e0b'/%3E%3Crect x='120' y='210' width='10' height='10' fill='%2322c55e'/%3E%3Crect x='260' y='240' width='10' height='10' fill='%23ef4444'/%3E%3C/g%3E%3C/svg%3E"/>
+        <div class="cap">Confetti rains 🎊</div>
+      </div>
+      <div class="polaroid" style="--r:3deg">
+        <img alt="Starry" src="data:image/svg+xml;utf8,\
+          %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='100%25' height='100%25' fill='%2311172a'/%3E%3Cg fill='%23fff'%3E%3Ccircle cx='50' cy='60' r='2'/%3E%3Ccircle cx='120' cy='20' r='2'/%3E%3Ccircle cx='280' cy='80' r='2'/%3E%3Ccircle cx='340' cy='40' r='2'/%3E%3Ccircle cx='200' cy='160' r='2'/%3E%3Ccircle cx='100' cy='240' r='2'/%3E%3C/g%3E%3C/svg%3E"/>
+        <div class="cap">Wishing on stars ✨</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <h2>Open Notes & Letters 💌</h2>
+    <p class="lead">Some words from the heart. (You can edit these easily.)</p>
+    <div class="accordion">
+      <details>
+        <summary>Long Note 1 — Gratitude</summary>
+        <p>
+          Ekam, thank you for being the kind of friend who shows up — not just when it’s fun, but when it matters. Your presence quiets chaos and your humour turns even tired days into something lighter. I’ve learned a lot from you about patience, kindness, and being consistent without making noise about it.
+        </p>
+      </details>
+      <details>
+        <summary>Long Note 2 — Wishes for the year</summary>
+        <p>
+          This year, I hope you find new adventures that challenge you just enough, people who appreciate you fully, and moments that make you proud of how far you’ve come. May every effort compound into something beautiful.
+        </p>
+      </details>
+      <details>
+        <summary>Long Note 3 — Our bond</summary>
+        <p>
+          No matter how busy life gets or how chaotic schedules become, I’m always rooting for you. Our friendship is simple, honest, and rare — and that’s what makes it strong. Here’s to more shared notes, secret snacks, and unbeatable teamwork in class.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section container">
+    <h2>Mini Games & Fun 🎮</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Compliment Generator</h3>
+        <p class="lead">Click the button above to drop a fresh compliment for Ekam!</p>
+        <div id="complimentBox" class="wish" style="margin-top:10px"><p>Tap the 💬 button to start!</p></div>
+      </div>
+      <div class="card">
+        <h3>Surprise Card</h3>
+        <p class="lead">Opens a cute animated card with sparkles and a birthday cheer.</p>
+        <div id="surpriseCard" class="wish" style="display:none; margin-top:10px">
+          <p style="font-size:18px">🎉 Surprise, <strong>Ekam!</strong> You are unstoppable, unbothered, and unbelievably awesome. Keep winning!</p>
+          <p style="margin-top:8px">— From your friend, <strong>Narendra</strong></p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Make a Wish ⭐</h3>
+        <p class="lead">Type a wish and blow the candles (well… click). If you believe, it counts!</p>
+        <div style="display:flex; gap:8px; margin-top:10px">
+          <input id="wishInput" placeholder="Type your birthday wish here…" style="flex:1; padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:var(--text)"/>
+          <button id="wishBtn" class="btn">✨ Wish</button>
+        </div>
+        <div id="wishEcho" class="lead" style="margin-top:10px"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast">Link copied!</div>
+
+  <footer class="footer">
+    Made with 💜 by <strong>Narendra Srinath Roy</strong> for <strong>Ekamdeep Kaur</strong>. — <span id="year"></span>
+  </footer>
+
+  <script>
+    // ===== Typewriter =====
+    (function(){
+      const el = document.getElementById('typewriter');
+      const full = el.textContent;
+      el.textContent = '';
+      let i = 0;
+      function tick(){
+        el.textContent = full.slice(0, i++);
+        if(i <= full.length){ requestAnimationFrame(tick); }
+      }
+      tick();
+    })();
+
+    // ===== Countdown to 22 August =====
+    function nextBirthdayDate(){
+      const now = new Date();
+      const year = now.getFullYear();
+      let target = new Date(year, 7, 22, 0, 0, 0); // Aug = 7
+      if(now > target) target = new Date(year+1, 7, 22, 0, 0, 0);
+      return target;
+    }
+    const countdownEl = document.getElementById('countdown');
+    function renderCountdown(){
+      const t = nextBirthdayDate();
+      const now = new Date();
+      const diff = t - now;
+      const d = Math.floor(diff / (1000*60*60*24));
+      const h = Math.floor((diff / (1000*60*60)) % 24);
+      const m = Math.floor((diff / (1000*60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+      countdownEl.textContent = `Countdown to 22 Aug: ${d}d ${h}h ${m}m ${s}s`;
+    }
+    setInterval(renderCountdown, 1000); renderCountdown();
+
+    // ===== Confetti (canvas) =====
+    const canvas = document.getElementById('fxCanvas');
+    const ctx = canvas.getContext('2d');
+    let confetti = [];
+    function resize(){ canvas.width = innerWidth; canvas.height = innerHeight; }
+    addEventListener('resize', resize); resize();
+    function spawnConfetti(n=200){
+      for(let i=0;i<n;i++){
+        confetti.push({
+          x: Math.random()*canvas.width,
+          y: -10 - Math.random()*canvas.height*0.5,
+          r: 2 + Math.random()*4,
+          a: Math.random()*Math.PI*2,
+          s: 1 + Math.random()*3,
+          w: 0.5 + Math.random()*1.5,
+          c: `hsl(${Math.floor(Math.random()*360)}, 90% , 60%)`
+        });
+      }
+    }
+    function draw(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(const p of confetti){
+        p.y += p.s; p.x += Math.sin(p.a += 0.05) * p.w;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+        ctx.fillStyle = p.c; ctx.fill();
+      }
+      confetti = confetti.filter(p => p.y < canvas.height + 20);
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    document.getElementById('confettiBtn').addEventListener('click', ()=>{
+      spawnConfetti(250);
+    });
+
+    // ===== Balloons =====
+    function releaseBalloons(count=12){
+      const colors = ['#ff7ab6','#8b5cf6','#22d3ee','#f59e0b','#22c55e','#ef4444'];
+      for(let i=0;i<count;i++){
+        const b = document.createElement('div');
+        b.className = 'balloon';
+        b.style.left = Math.random()*100 + 'vw';
+        b.style.setProperty('--clr', colors[Math.floor(Math.random()*colors.length)]);
+        b.style.setProperty('--dur', (8+Math.random()*6)+'s');
+        b.style.setProperty('--x', (Math.random()*100 - 50) + 'px');
+        document.body.appendChild(b);
+        setTimeout(()=> b.remove(), 16000);
+      }
+    }
+    document.getElementById('balloonBtn').addEventListener('click', ()=> releaseBalloons());
+
+    // ===== Surprise Card =====
+    const surpriseCard = document.getElementById('surpriseCard');
+    document.getElementById('surpriseBtn').addEventListener('click', ()=>{
+      surpriseCard.style.display = surpriseCard.style.display === 'none' ? 'block' : 'none';
+      spawnConfetti(200);
+    });
+
+    // ===== Compliments =====
+    const compliments = [
+      'Your positivity is literally contagious, Ekam! ✨',
+      'Brains + kindness = you. Unbeatable combo. 💡💜',
+      'You make tough days feel lighter. Always.',
+      'Your dedication is inspiring — quietly powerful.',
+      'That smile could power a whole city. ⚡',
+      'Best teammate, best vibe, best friend. Period.',
+      'You’re proof that good people still exist. 🙌',
+      'Effortless style, elite energy, top-tier human.',
+      'Sharp mind. Soft heart. Strong spirit. 💫',
+      'You turn moments into memories. 📸'
+    ];
+    const box = document.getElementById('complimentBox');
+    document.getElementById('complimentBtn').addEventListener('click', ()=>{
+      const msg = compliments[Math.floor(Math.random()*compliments.length)];
+      box.innerHTML = `<p style="font-size:18px">${msg}</p>`;
+    });
+
+    // ===== Make a Wish =====
+    const wishInput = document.getElementById('wishInput');
+    const wishEcho = document.getElementById('wishEcho');
+    document.getElementById('wishBtn').addEventListener('click', ()=>{
+      const w = wishInput.value.trim();
+      if(!w){ wishEcho.textContent = 'Make a wish first ✨'; return; }
+      wishEcho.textContent = `Wish saved: "${w}" — may it come true!`;
+      spawnConfetti(150);
+      wishInput.value = '';
+    });
+
+    // ===== Theme Toggle =====
+    const themeBtn = document.getElementById('themeBtn');
+    themeBtn.addEventListener('click', ()=>{
+      document.body.classList.toggle('light');
+    });
+
+    // ===== Share / Copy link =====
+    const toast = document.getElementById('toast');
+    function showToast(txt){ toast.textContent = txt; toast.classList.add('show'); setTimeout(()=> toast.classList.remove('show'), 1600); }
+    document.getElementById('shareBtn').addEventListener('click', async ()=>{
+      const url = location.href;
+      if(navigator.share){
+        try{ await navigator.share({ title: document.title, text: 'Check out Ekam\'s birthday page! 🎉', url }); } catch(e){}
+      } else {
+        try{ await navigator.clipboard.writeText(url); showToast('Link copied!'); } catch(e){ showToast('Could not copy link'); }
+      }
+    });
+
+    // ===== Footer year =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Simple built-in music via WebAudio =====
+    let audioCtx = null, playing = false;
+    function melody(){
+      if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const now = audioCtx.currentTime;
+      const seq = [
+        {f:523.25, t:0}, {f:659.25, t:0.25}, {f:587.33, t:0.5}, {f:392.00, t:0.75},
+        {f:523.25, t:1.0}, {f:659.25, t:1.25}, {f:587.33, t:1.5}, {f:784.00, t:1.75},
+        {f:659.25, t:2.0}, {f:587.33, t:2.25}, {f:523.25, t:2.5}, {f:392.00, t:2.75}
+      ];
+      for(const n of seq){
+        const o = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        o.type = 'sine'; o.frequency.value = n.f; o.connect(g); g.connect(audioCtx.destination);
+        const st = now + n.t;
+        o.start(st); o.stop(st + 0.18);
+        g.gain.setValueAtTime(0.0001, st);
+        g.gain.exponentialRampToValueAtTime(0.15, st + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, st + 0.2);
+      }
+    }
+    const musicBtn = document.getElementById('musicBtn');
+    musicBtn.addEventListener('click', async ()=>{
+      if(!audioCtx){ melody(); playing = true; musicBtn.textContent = '⏸️ Music'; return; }
+      // On subsequent clicks, just play a burst melody again
+      melody();
+      playing = !playing;
+      musicBtn.textContent = playing ? '⏸️ Music' : '▶️ Music';
+    });
+
+    // Start with a little sparkle
+    setTimeout(()=> spawnConfetti(80), 600);
+  </script>
+</body>
+</html>
